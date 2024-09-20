@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        {% block head %}
+        <title>Quotes</title> 
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body style="
+        background: url(/static/glow_b.gif);
+        background-color: rgba(82, 243, 255, 0.56);
+        background-blend-mode: overlay; 
+        background-attachment: fixed;
+        background-position: 0% 50%; 
+        background-size: 100% 100% ;
+        background-repeat: no-repeat;
+    ">
+        <ul class="test">
+            <li><a href="{% url 'quote' %}">Home</a></li>
+            <li><a href="{% url 'show_all' %}">All Quotes</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
